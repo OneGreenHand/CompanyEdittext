@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CompanyEdittext">
+        <attr name="ce_text" format="string" />
+        <attr name="ce_text_color" format="color" />
+    </declare-styleable>
+</resources>

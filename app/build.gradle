@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.green.hand.companyedittext"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false//是否开启代码混淆
+            zipAlignEnabled false//是否优化apk文件，将apk文件中未压缩的数据在4个字节边界上对齐
+            shrinkResources false//是否去除无用资源，任何在编译过程中没有用到的资源或者代码都会被删除，可以有效减小apk体积
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation project(':library')
+}
