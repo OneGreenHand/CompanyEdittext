@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.widget.EditText;
+import android.text.TextUtils;
 
 /**
  * @author OneGreenHand
@@ -70,7 +71,7 @@ public class CompanyEdittext extends EditText {
         public void afterTextChanged(Editable s) {
             if (ceText.trim().isEmpty())
                 return;
-            if (s != null) {
+            if (!TextUtils.isEmpty(s.toString())) {
                 removeTextChangedListener(this);//移除输入监听
                 if (s.toString().trim().equals(ceText)) {
                     setText("");
